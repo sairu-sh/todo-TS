@@ -1,0 +1,12 @@
+@import "./partials/reset";
+@import "./partials/container";
+@import "./partials/header";
+@import "./partials/search-box";
+@import "./partials/control";
+@import "./partials/task-list";
+@import "./partials/modal";
+@import "./partials/overlay";
+
+.hidden {
+  display: none;
+}

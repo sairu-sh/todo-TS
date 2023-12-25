@@ -1,0 +1,40 @@
+$controls-bg-color: #1f1f1f;
+$controls-text-color: #fff;
+$controls-border-color: #555;
+
+.controls {
+  //   background-color: $controls-bg-color;
+  padding: 10px 0;
+  .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    input[type="text"].new-task {
+      width: 95%;
+      //   max-width: 1100px;
+      padding: 8px;
+      border: 1px solid $controls-border-color;
+      border-radius: 5px;
+      color: $controls-text-color;
+      background-color: $controls-bg-color;
+      outline: none;
+
+      &::placeholder {
+        color: #888;
+      }
+    }
+
+    img {
+      //   position: absolute;
+      width: 37px;
+      height: 37px;
+      //   right: 5px;
+      background-color: #fff;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+$modal-bg-color: #1f1f1f;
+$modal-text-color: #fff;
+$modal-input-bg-color: #333;
+$modal-input-border-color: #555;
+$modal-input-focus-border-color: #ffd700;
+$modal-btn-bg-color: #ffd700;
+$modal-btn-text-color: #1f1f1f;
+$modal-btn-cancel-bg-color: #555;
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $modal-bg-color;
+  padding: 20px;
+  border-radius: 5px;
+  width: 40%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  .new-task-title,
+  #task-description {
+    width: 95%;
+    background-color: $modal-input-bg-color;
+    border: 1px solid $modal-input-border-color;
+    color: $modal-text-color;
+    border-radius: 3px;
+    outline: none;
+    padding: 8px;
+
+    &:focus {
+      border-color: $modal-input-focus-border-color;
+    }
+  }
+
+  #task-description {
+    width: 95%;
+    resize: none;
+  }
+
+  .btn {
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 1rem;
+    width: 95%;
+    padding: 8px;
+
+    &.btn-adder {
+      background-color: $modal-btn-bg-color;
+      color: $modal-btn-text-color;
+    }
+
+    &.cancel {
+      background-color: $modal-btn-cancel-bg-color;
+      color: $modal-text-color;
+    }
+  }
+}

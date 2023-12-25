@@ -1,0 +1,39 @@
+$search-bar-bg-color: #1f1f1f;
+$search-bar-text-color: #fff;
+$search-bar-border-color: #555;
+$search-bar-glass-hover-color: #ffd700;
+
+.search-bar {
+  padding: 10px 0;
+
+  .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    input[type="text"] {
+      width: 95%;
+      //   max-width: 100px;
+      flex: 1;
+      padding: 8px;
+      border: 1px solid $search-bar-border-color;
+      border-radius: 5px;
+      color: $search-bar-text-color;
+      background-color: $search-bar-bg-color;
+      outline: none;
+
+      &::placeholder {
+        color: #888;
+      }
+    }
+
+    .search-glass {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: 10px;
+      background-color: #1f1f1f;
+    }
+  }
+}

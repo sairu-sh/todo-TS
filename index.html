@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style/style.css" />
+    <title>todo</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo__container">
+          <p class="logo">TaskTrek</p>
+          <img src="/assets/images/check.svg" alt="check" />
+        </div>
+        <nav class="header__nav">
+          <ul>
+            <li class="nav--item active" id="home">Home</li>
+            <li class="nav--item" id="completed">Completed</li>
+            <li class="nav--item" id="remaining">Remaining</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="search-bar">
+      <div class="container">
+        <input type="text" name="searchtext" id="search-word" />
+        <img
+          src="/assets/images/search.svg"
+          alt="search-glass"
+          class="search-glass"
+        />
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="container">
+        <input type="text" class="new-task" id="new-task-controls" />
+        <img src="/assets/images/plus.svg" alt="" id="task-adder" />
+        <img src="/assets/images/expand.svg" alt="" id="expander" />
+      </div>
+    </div>
+
+    <div class="task-list" id="task-list">
+      <div class="container">
+        <!-- <div class="task--item">
+          <p class="task-title">Title</p>
+          <p class="task-description">description</p>
+          <input type="checkbox" name="checkbox-checked" />
+        </div>
+        <div class="task--item completed">
+          <p class="task-title">Title</p>
+          <p class="task-description">description</p>
+          <input type="checkbox" name="checkbox-checked" checked />
+        </div> -->
+        <div class="empty">
+          <img src="/assets/images/bullets.svg" alt="" />
+          <p>You don't have any tasks</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay hidden" id="overlay"></div>
+
+    <div class="modal hidden" id="modal">
+      <input type="text" class="new-task-title" id="task-title-modal" />
+      <textarea
+        name="task-description"
+        id="task-description"
+        cols="50"
+        rows="7"
+      ></textarea>
+      <button class="btn btn-adder" id="task-adder-modal">Add Task</button>
+      <button class="btn cancel" id="cancel-btn">Cancel</button>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
