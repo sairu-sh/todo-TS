@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo</title>
+    <script type="module" crossorigin src="/todo-TS/assets/index-lmBrB8VA.js"></script>
+    <link rel="stylesheet" crossorigin href="/todo-TS/assets/index-rgj_7AM-.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo__container">
+          <p class="logo">TaskTrek</p>
+          <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20?%3e%3csvg%20height='20px'%20version='1.1'%20viewBox='0%200%2020%2020'%20width='20px'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:sketch='http://www.bohemiancoding.com/sketch/ns'%20xmlns:xlink='http://www.w3.org/1999/xlink'%3e%3ctitle/%3e%3cdesc/%3e%3cdefs/%3e%3cg%20fill='%23fff'%20fill-rule='evenodd'%20id='Page-1'%20stroke='none'%20stroke-width='1'%3e%3cg%20fill='%23fff'%20id='Core'%20transform='translate(-128.000000,%20-86.000000)'%3e%3cg%20id='check-circle-outline'%20transform='translate(128.000000,%2086.000000)'%3e%3cpath%20d='M5.9,8.1%20L4.5,9.5%20L9,14%20L19,4%20L17.6,2.6%20L9,11.2%20L5.9,8.1%20L5.9,8.1%20Z%20M18,10%20C18,14.4%2014.4,18%2010,18%20C5.6,18%202,14.4%202,10%20C2,5.6%205.6,2%2010,2%20C10.8,2%2011.5,2.1%2012.2,2.3%20L13.8,0.7%20C12.6,0.3%2011.3,0%2010,0%20C4.5,0%200,4.5%200,10%20C0,15.5%204.5,20%2010,20%20C15.5,20%2020,15.5%2020,10%20L18,10%20L18,10%20Z'%20id='Shape'/%3e%3c/g%3e%3c/g%3e%3c/g%3e%3c/svg%3e" alt="check" />
+        </div>
+        <nav class="header__nav">
+          <ul>
+            <li class="nav--item active" id="home">Home</li>
+            <li class="nav--item" id="completed">Completed</li>
+            <li class="nav--item" id="remaining">Remaining</li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="search-bar">
+      <div class="container">
+        <input type="text" name="searchtext" id="search-word" />
+        <img
+          src="data:image/svg+xml,%3c?xml%20version='1.0'%20?%3e%3csvg%20class='feather%20feather-search'%20fill='none'%20height='24'%20stroke='white'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='2'%20viewBox='0%200%2024%2024'%20width='24'%20xmlns='http://www.w3.org/2000/svg'%3e%3ccircle%20cx='11'%20cy='11'%20r='8'/%3e%3cline%20x1='21'%20x2='16.65'%20y1='21'%20y2='16.65'/%3e%3c/svg%3e"
+          alt="search-glass"
+          class="search-glass"
+        />
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="container">
+        <input type="text" class="new-task" id="new-task-controls" />
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='16'%20width='14'%20viewBox='0%200%20448%20512'%3e%3c!--!Font%20Awesome%20Free%206.5.1%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license/free%20Copyright%202023%20Fonticons,%20Inc.--%3e%3cpath%20d='M64%2032C28.7%2032%200%2060.7%200%2096V416c0%2035.3%2028.7%2064%2064%2064H384c35.3%200%2064-28.7%2064-64V96c0-35.3-28.7-64-64-64H64zM200%20344V280H136c-13.3%200-24-10.7-24-24s10.7-24%2024-24h64V168c0-13.3%2010.7-24%2024-24s24%2010.7%2024%2024v64h64c13.3%200%2024%2010.7%2024%2024s-10.7%2024-24%2024H248v64c0%2013.3-10.7%2024-24%2024s-24-10.7-24-24z'/%3e%3c/svg%3e" alt="" id="task-adder" />
+        <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20?%3e%3csvg%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle/%3e%3cpath%20d='M4,7H2V4A2,2,0,0,1,4,2H7V4H4Z'%20fill='%23464646'/%3e%3cpath%20d='M22,7H20V4H17V2h3a2,2,0,0,1,2,2Z'%20fill='%23464646'/%3e%3cpath%20d='M7,22H4a2,2,0,0,1-2-2V17H4v3H7Z'%20fill='%23464646'/%3e%3cpath%20d='M20,22H17V20h3V17h2v3A2,2,0,0,1,20,22Z'%20fill='%23464646'/%3e%3cpath%20d='M8,9a1,1,0,0,1-.71-.29l-1-1A1,1,0,0,1,7.71,6.29l1,1a1,1,0,0,1,0,1.42A1,1,0,0,1,8,9Z'%20fill='%23464646'/%3e%3cpath%20d='M16,9a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l1-1a1,1,0,1,1,1.42,1.42l-1,1A1,1,0,0,1,16,9Z'%20fill='%23464646'/%3e%3cpath%20d='M7,18a1,1,0,0,1-.71-.29,1,1,0,0,1,0-1.42l1-1a1,1,0,0,1,1.42,1.42l-1,1A1,1,0,0,1,7,18Z'%20fill='%23464646'/%3e%3cpath%20d='M17,18a1,1,0,0,1-.71-.29l-1-1a1,1,0,0,1,1.42-1.42l1,1a1,1,0,0,1,0,1.42A1,1,0,0,1,17,18Z'%20fill='%23464646'/%3e%3c/svg%3e" alt="" id="expander" />
+      </div>
+    </div>
+
+    <div class="task-list" id="task-list">
+      <div class="container">
+        <!-- <div class="task--item">
+          <p class="task-title">Title</p>
+          <p class="task-description">description</p>
+          <input type="checkbox" name="checkbox-checked" />
+        </div>
+        <div class="task--item completed">
+          <p class="task-title">Title</p>
+          <p class="task-description">description</p>
+          <input type="checkbox" name="checkbox-checked" checked />
+        </div> -->
+        <div class="empty">
+          <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20?%3e%3csvg%20viewBox='0%200%20256%20256'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20fill='none'%20height='256'%20width='256'/%3e%3cline%20fill='none'%20stroke='%23000'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='16'%20x1='88'%20x2='216'%20y1='64'%20y2='64'/%3e%3cline%20fill='none'%20stroke='%23000'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='16'%20x1='88'%20x2='216'%20y1='128'%20y2='128'/%3e%3cline%20fill='none'%20stroke='%23000'%20stroke-linecap='round'%20stroke-linejoin='round'%20stroke-width='16'%20x1='88'%20x2='216'%20y1='192'%20y2='192'/%3e%3ccircle%20cx='44'%20cy='64'%20r='12'/%3e%3ccircle%20cx='44'%20cy='128'%20r='12'/%3e%3ccircle%20cx='44'%20cy='192'%20r='12'/%3e%3c/svg%3e" alt="" />
+          <p>You don't have any tasks</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay hidden" id="overlay"></div>
+
+    <div class="modal hidden" id="modal">
+      <input type="text" class="new-task-title" id="task-title-modal" />
+      <textarea
+        name="task-description"
+        id="task-description"
+        cols="50"
+        rows="7"
+      ></textarea>
+      <button class="btn btn-adder" id="task-adder-modal">Add Task</button>
+      <button class="btn cancel" id="cancel-btn">Cancel</button>
+    </div>
+  </body>
+</html>
