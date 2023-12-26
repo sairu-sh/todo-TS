@@ -1,5 +1,7 @@
 import { Task } from "./TASK.ts";
 import { TaskList } from "./TASKLIST.ts";
+
+//control divs
 const searchBox = document.getElementById("search-word") as HTMLInputElement;
 const taskDiv = document.getElementById("task-list") as HTMLDivElement;
 const newTaskControl = document.getElementById(
@@ -7,6 +9,7 @@ const newTaskControl = document.getElementById(
 ) as HTMLInputElement;
 const taskAdderControl = document.getElementById("task-adder");
 
+//modal divs
 const newTaskModal = document.getElementById(
   "task-title-modal"
 ) as HTMLInputElement;
@@ -41,15 +44,6 @@ function setActiveNav(navElement: HTMLUListElement, navName: string) {
   searchFnxn("");
 }
 
-// Event listeners
-navHome?.addEventListener("click", () => setActiveNav(navHome, "task"));
-navCompleted?.addEventListener("click", () =>
-  setActiveNav(navCompleted, "completed")
-);
-navRemaining?.addEventListener("click", () =>
-  setActiveNav(navRemaining, "remaining")
-);
-
 //modal window manipulation
 function hideOverlay() {
   overlay?.classList.add("hidden");
@@ -61,10 +55,20 @@ function displayOverlay() {
   modal?.classList.remove("hidden");
 }
 
+// Event listeners
+navHome?.addEventListener("click", () => setActiveNav(navHome, "task"));
+navCompleted?.addEventListener("click", () =>
+  setActiveNav(navCompleted, "completed")
+);
+navRemaining?.addEventListener("click", () =>
+  setActiveNav(navRemaining, "remaining")
+);
+
 expander?.addEventListener("click", displayOverlay);
 overlay.addEventListener("click", hideOverlay);
 cancelBtn.addEventListener("click", hideOverlay);
 
+//three types of taskList
 const taskList = new TaskList();
 const completedList = new TaskList();
 const remainingList = new TaskList();
@@ -88,6 +92,24 @@ function setActiveList() {
   }
 }
 
+//searching mechanism
+function searchFnxn(searchParam: string = "") {
+  setActiveList();
+  const matchingTasks = currentList.list.filter((task) =>
+    task.title.includes(searchParam)
+  );
+  const list = new TaskList(matchingTasks);
+  renderTasks(list);
+}
+
+searchBox?.addEventListener("input", (e) => {
+  const searchParam = (e.target as HTMLInputElement).value;
+  searchFnxn(searchParam);
+});
+
+searchFnxn("");
+
+//task creation and manipulation
 function createTask(title: string, description: string = "") {
   const task = new Task(title, description);
   taskList.addToList(task);
@@ -168,6 +190,7 @@ function renderTasks(taskList: TaskList) {
   }
 }
 
+//create a new task and immediately render the newly added task
 function taskAdderRenderer(source: string = "control") {
   let taskTitle;
   let taskDescription;
@@ -187,6 +210,7 @@ function taskAdderRenderer(source: string = "control") {
   }
 }
 
+//eventListeners listening for adding mechanisms
 taskAdderControl?.addEventListener("click", () => taskAdderRenderer());
 
 newTaskControl?.addEventListener("keydown", (e) => {
@@ -194,19 +218,3 @@ newTaskControl?.addEventListener("keydown", (e) => {
 });
 
 taskAdderModal?.addEventListener("click", () => taskAdderRenderer("modal"));
-
-searchBox?.addEventListener("input", (e) => {
-  const searchParam = (e.target as HTMLInputElement).value;
-  searchFnxn(searchParam);
-});
-
-function searchFnxn(searchParam: string = "") {
-  setActiveList();
-  const matchingTasks = currentList.list.filter((task) =>
-    task.title.includes(searchParam)
-  );
-  const list = new TaskList(matchingTasks);
-  renderTasks(list);
-}
-
-searchFnxn("");
